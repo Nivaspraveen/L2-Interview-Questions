@@ -26,8 +26,12 @@ const generateBinaryPattern = n => {
         return;
     }
     for (let i = 0; i < limit; i++) {
-        const binaryStr = i.toString(2).padStart(n, '0');
-        console.log(binaryStr.split('').join(' '));
+        let binaryStr = '';
+        for (let j = n - 1; j >= 0; j--) {
+            const bit = (i >> j) & 1;
+            binaryStr += bit + ' ';
+        }
+        console.log(binaryStr.trim());
     }
 };
 
