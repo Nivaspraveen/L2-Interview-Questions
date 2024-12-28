@@ -4,10 +4,19 @@
 // Size of Array : 8
 // Enter the elements : 2 5 1 6 2 6 7 10
 // OUTPUT : 7
+// Ex. 
+// INPUT :
+// Size of Array : 4
+// Enter the elements : 4 1 2 2
+// OUTPUT :2
+// Ex. INPUT :
+// Size of Array : 1
+// Enter the elements : 1
+// OUTPUT :No second maximum
 
 const findSecondMax = (arr) => {
   if (arr.length < 2) {
-    return "Array must have atleast two elements.";
+    return "No second maximum";
   }
   let max = -Infinity,
     secondMax = -Infinity;
@@ -22,11 +31,11 @@ const findSecondMax = (arr) => {
     : secondMax;
 };
 
-let arr = [2, 13, 9, 44, 1238, 567, 786];
+let arr = [2, 5, 1, 6, 2, 6, 7, 10];
 console.log(findSecondMax(arr));
 
-arr = [45, 112, 76, 32];
+arr = [4, 1, 2, 2];
 console.log(findSecondMax(arr));
 
-arr = [];
+arr = [1];
 console.log(findSecondMax(arr));
